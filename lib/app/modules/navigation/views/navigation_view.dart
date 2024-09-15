@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:payuung/app/modules/home/controllers/home_controller.dart';
+import 'package:payuung/app/modules/searching/controllers/searching_controller.dart';
 
 import '../../../components/app_colors.dart';
 import '../controllers/navigation_controller.dart';
@@ -10,6 +12,8 @@ class NavigationView extends GetView<NavigationController> {
   const NavigationView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    HomeController.to;
+    SearchingController.to;
     return WillPopScope(
       onWillPop: () {
         if (controller.currentIndex == 0) {

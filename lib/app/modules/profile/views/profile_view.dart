@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:payuung/app/components/app_colors.dart';
+import 'package:payuung/app/modules/account/controllers/account_controller.dart';
 import 'package:payuung/app/modules/profile/views/widgets/profile_action.dart';
 import 'package:payuung/app/routes/app_pages.dart';
 
@@ -14,6 +15,7 @@ class ProfileView extends GetView<ProfileController> {
   const ProfileView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    AccountController.to;
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -84,6 +86,7 @@ class ProfileView extends GetView<ProfileController> {
                     icon: Icons.person,
                     onTap: () async {
                       await controller.getProfile();
+                      await AccountController.to.fetchProvinces();
                       Get.toNamed(Routes.ACCOUNT);
                     }),
                 const SizedBox(height: 15),

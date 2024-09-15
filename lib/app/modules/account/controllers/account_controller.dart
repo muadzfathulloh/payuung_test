@@ -183,10 +183,10 @@ class AccountController extends GetxController {
         NIKController.text.isEmpty ||
         alamatKtpController.text.isEmpty ||
         kodeposController.text.isEmpty ||
-        provinsiController == null ||
-        kotaController == null ||
-        kecamatanController == null ||
-        kelurahanController == null ||
+        // provinsiController == null ||
+        // kotaController == null ||
+        // kecamatanController == null ||
+        // kelurahanController == null ||
         namaUsahaController.text.isEmpty ||
         alamatUsahaController.text.isEmpty ||
         jabatan == null ||
@@ -211,16 +211,16 @@ class AccountController extends GetxController {
       "nik": NIKController.text,
       "alamat_ktp": alamatKtpController.text,
       "kodepos": kodeposController.text,
-      "provinsi": provinsiController!,
-      "kota": kotaController!,
-      "kecamatan": kecamatanController!,
-      "kelurahan": kelurahanController!,
+      "provinsi": provinsiController ?? '',
+      "kota": kotaController ?? '',
+      "kecamatan": kecamatanController ?? '',
+      "kelurahan": kelurahanController ?? '',
       "alamat_domisili": alamatKtp2Controller.text,
       "kodepos_domisili": kodepos2Controller.text,
-      "provinsi_domisili": isSameAddress ? provinsiController! : provinsi2Controller!,
-      "kota_domisili": isSameAddress ? kotaController! : kota2Controller!,
-      "kecamatan_domisili": isSameAddress ? kecamatanController! : kecamatan2Controller!,
-      "kelurahan_domisili": isSameAddress ? kelurahanController! : kelurahan2Controller!,
+      "provinsi_domisili": isSameAddress ? (provinsiController ?? '') : provinsi2Controller!,
+      "kota_domisili": isSameAddress ? (kotaController ?? '') : kota2Controller!,
+      "kecamatan_domisili": isSameAddress ? (kecamatanController ?? '') : kecamatan2Controller!,
+      "kelurahan_domisili": isSameAddress ? (kelurahanController ?? '') : kelurahan2Controller!,
       "nama_usaha": namaUsahaController.text,
       "alamat_usaha": alamatUsahaController.text,
       "jabatan": jabatan!,
